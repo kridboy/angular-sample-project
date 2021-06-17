@@ -1,0 +1,198 @@
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+
+      <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+        <div class="card mb-3">
+          <div class="card-header">
+            <h5 class="display-5">Customer</h5>
+          </div>
+          <div class="card-body">
+            <div formGroupName="customer">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input formControlName="firstName" type="text" class="form-control" id="firstName">
+                  <app-control-messages [control]="checkoutFormGroup.get('firstName')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-6">
+                  <label class="form-label">Last Name</label>
+                  <input formControlName="lastName" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('lastName')" ></app-control-messages>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input formControlName="email" type="email" class="form-control"
+                       aria-describedby="emailHelp">
+                <app-control-messages [control]="checkoutFormGroup.get('email')" ></app-control-messages>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card  mb-3">
+          <div class="card-header">
+            <h5 class="display-5">Shipping Address</h5>
+          </div>
+          <div class="card-body">
+            <div formGroupName="shippingAddress">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label class="form-label">Country</label>
+                  <select formControlName="country" class="form-select" aria-label="country select">
+                    <option selected>Select your country</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <app-control-messages [control]="checkoutFormGroup.get('country')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-6">
+                  <label class="form-label">State</label>
+                  <input formControlName="state" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('state')" ></app-control-messages>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-8">
+                  <label class="form-label">City</label>
+                  <input formControlName="city" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('city')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-4">
+                  <label class="form-label">Postal Code</label>
+                  <input formControlName="postalCode" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('postalCode')" ></app-control-messages>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-8">
+                  <label class="form-label">Street</label>
+                  <input formControlName="streetName" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('streetName')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-4">
+                  <label class="form-label">Number</label>
+                  <input formControlName="streetNumber" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('streetNumber')" ></app-control-messages>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <h5 class="display-5 col-md-8 d-inline-block">Billing Address</h5>
+            <div class="col-md-4 d-inline-block align-content-end">
+              <input (change)="adjustBillingInfo(myCheckbox.checked)" #myCheckbox type="checkbox" class="">
+              <span class="p-3">Same as Shipping Address</span>
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div formGroupName="billingAddress">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label class="form-label">Country</label>
+                  <select formControlName="country" class="form-select" aria-label="country select">
+                    <option selected>Select your country</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <app-control-messages [control]="checkoutFormGroup.get('country')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-6">
+                  <label class="form-label">State</label>
+                  <input formControlName="state" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('state')" ></app-control-messages>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-8">
+                  <label class="form-label">City</label>
+                  <input formControlName="city" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('city')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-4">
+                  <label class="form-label">Postal Code</label>
+                  <input formControlName="postalCode" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('postalCode')" ></app-control-messages>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-8">
+                  <label class="form-label">Street</label>
+                  <input formControlName="streetName" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('streetName')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-4">
+                  <label class="form-label">Number</label>
+                  <input formControlName="streetNumber" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('streetNumber')" ></app-control-messages>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <h5 class="display-5">Credit Card information</h5>
+          </div>
+          <div class="card-body">
+            <div formGroupName="creditCardInfo">
+              <div class="row">
+                <div class="mb-3 col-md-3">
+                  <label class="form-label">Card type</label>
+                  <select formControlName="cardType" class="form-select" aria-label="country select">
+                    <option selected>Select your country</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <app-control-messages [control]="checkoutFormGroup.get('cardType')" ></app-control-messages>
+                </div>
+                <div class="mb-3  col-md-9">
+                  <label class="form-label">Cardholder name</label>
+                  <input formControlName="nameOnCard" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('nameOnCard')" ></app-control-messages>
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label class="form-label">Card Number</label>
+                  <input formControlName="cardNumber" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('cardNumber')" ></app-control-messages>
+
+                </div>
+                <div class="mb-3  col-md-3">
+                  <label class="form-label">CVV</label>
+                  <input formControlName="securityCode" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('securityCode')" ></app-control-messages>
+                </div>
+                <div class="mb-3 col-md-3">
+                  <label class="form-label">Expiration date</label>
+                  <input formControlName="expirationDate" type="text" class="form-control">
+                  <app-control-messages [control]="checkoutFormGroup.get('expirationDate')" ></app-control-messages>
+                </div>
+              </div>
+              <div class="row">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 text-end">
+          <button type="submit" class="btn btn-primary m-5 btn-lg" [disabled]="!checkoutFormGroup.valid">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
