@@ -8,7 +8,7 @@ export class ValidationService {
   constructor() { }
 
   static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
-    let config = {
+    let config:any = {
       required: 'Required',
       invalidCreditCard: 'Is invalid credit card number',
       invalidEmailAddress: 'Invalid email address',
@@ -18,7 +18,7 @@ export class ValidationService {
       noNumberInput:'Only numbers allowed'
     };
 
-    // @ts-ignore
+
     return config[validatorName];
   }
 
@@ -49,7 +49,7 @@ export class ValidationService {
   }
   //
   static onlyNumberValidator(control:FormControl){
-    if(control.value.match(/^[0-9]*$/))
+    if(control.value?.match(/^[0-9]*$/))
       return null;
     else
       return {noNumberInput: true}

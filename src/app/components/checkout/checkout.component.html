@@ -13,12 +13,12 @@
                 <div class="mb-3 col-md-6">
                   <label for="firstName" class="form-label">First Name</label>
                   <input formControlName="firstName" type="text" class="form-control" id="firstName">
-                  <app-control-messages [control]="checkoutFormGroup.get('firstName')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('customer')?.get('firstName')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-6">
                   <label class="form-label">Last Name</label>
                   <input formControlName="lastName" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('lastName')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('customer')?.get('lastName')" ></app-control-messages>
                 </div>
               </div>
 
@@ -26,7 +26,7 @@
                 <label class="form-label">Email address</label>
                 <input formControlName="email" type="email" class="form-control"
                        aria-describedby="emailHelp">
-                <app-control-messages [control]="checkoutFormGroup.get('email')" ></app-control-messages>
+                <app-control-messages [control]="checkoutFormGroup.get('customer')?.get('email')" ></app-control-messages>
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
               </div>
             </div>
@@ -48,36 +48,36 @@
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
-                  <app-control-messages [control]="checkoutFormGroup.get('country')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('shippingAddress')?.get('country')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-6">
                   <label class="form-label">State</label>
                   <input formControlName="state" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('state')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('shippingAddress')?.get('state')" ></app-control-messages>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-md-8">
                   <label class="form-label">City</label>
                   <input formControlName="city" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('city')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('shippingAddress')?.get('city')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-4">
                   <label class="form-label">Postal Code</label>
                   <input formControlName="postalCode" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('postalCode')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('shippingAddress')?.get('postalCode')" ></app-control-messages>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-md-8">
                   <label class="form-label">Street</label>
                   <input formControlName="streetName" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('streetName')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('shippingAddress')?.get('streetName')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-4">
                   <label class="form-label">Number</label>
                   <input formControlName="streetNumber" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('streetNumber')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('shippingAddress')?.get('streetNumber')" ></app-control-messages>
                 </div>
               </div>
             </div>
@@ -104,36 +104,36 @@
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
-                  <app-control-messages [control]="checkoutFormGroup.get('country')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('billingAddress')?.get('country')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-6">
                   <label class="form-label">State</label>
                   <input formControlName="state" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('state')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('billingAddress')?.get('state')" ></app-control-messages>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-md-8">
                   <label class="form-label">City</label>
                   <input formControlName="city" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('city')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('billingAddress')?.get('city')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-4">
                   <label class="form-label">Postal Code</label>
                   <input formControlName="postalCode" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('postalCode')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('billingAddress')?.get('postalCode')" ></app-control-messages>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-md-8">
                   <label class="form-label">Street</label>
                   <input formControlName="streetName" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('streetName')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('billingAddress')?.get('streetName')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-4">
                   <label class="form-label">Number</label>
                   <input formControlName="streetNumber" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('streetNumber')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('billingAddress')?.get('streetNumber')" ></app-control-messages>
                 </div>
               </div>
             </div>
@@ -155,30 +155,30 @@
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
-                  <app-control-messages [control]="checkoutFormGroup.get('cardType')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('creditCardInfo')?.get('cardType')" ></app-control-messages>
                 </div>
                 <div class="mb-3  col-md-9">
                   <label class="form-label">Cardholder name</label>
                   <input formControlName="nameOnCard" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('nameOnCard')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('creditCardInfo')?.get('nameOnCard')" ></app-control-messages>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-md-6">
                   <label class="form-label">Card Number</label>
                   <input formControlName="cardNumber" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('cardNumber')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('creditCardInfo')?.get('cardNumber')" ></app-control-messages>
 
                 </div>
                 <div class="mb-3  col-md-3">
                   <label class="form-label">CVV</label>
                   <input formControlName="securityCode" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('securityCode')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('creditCardInfo')?.get('securityCode')" ></app-control-messages>
                 </div>
                 <div class="mb-3 col-md-3">
                   <label class="form-label">Expiration date</label>
                   <input formControlName="expirationDate" type="text" class="form-control">
-                  <app-control-messages [control]="checkoutFormGroup.get('expirationDate')" ></app-control-messages>
+                  <app-control-messages [control]="checkoutFormGroup.get('creditCardInfo')?.get('expirationDate')?.value" ></app-control-messages>
                 </div>
               </div>
               <div class="row">

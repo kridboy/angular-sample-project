@@ -5,7 +5,7 @@ import {ValidationService} from "../../services/validation.service";
 @Component({
   selector: 'app-control-messages',
   template:`
-    <div *ngIf="errorMessage !== null">bad booboo</div>
+    <div *ngIf="errorMessage !== null"><span class="text-danger">{{errorMessage}}</span></div>
   `
 })
 export class ControlMessagesComponent {
@@ -15,13 +15,9 @@ export class ControlMessagesComponent {
   get errorMessage() {
     for (let propertyName in this.control?.errors) {
       if (
-        this.control.errors.hasOwnProperty(propertyName) &&
-        this.control.touched
-      ) {
-        return ValidationService.getValidatorErrorMessage(
-          propertyName,
-          this.control.errors[propertyName]
-        );
+        this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+        let str:string=ValidationService.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
+        return str
       }
     }
     return null;
